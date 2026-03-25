@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Neon Arcade</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>🎮 Neon Arcade</h1>
+      <p class="subtitle">Casino vibes, arcade rules — no real money, just points.</p>
+
+      <section class="panel stats">
+        <div><span>Credits</span><strong id="credits">100</strong></div>
+        <div><span>Highest</span><strong id="highscore">100</strong></div>
+        <div><span>Streak</span><strong id="streak">0</strong></div>
+      </section>
+
+      <section class="panel controls">
+        <label for="bet">Bet</label>
+        <input id="bet" type="number" min="1" max="25" value="5" />
+        <button id="spinBtn">Spin</button>
+      </section>
+
+      <section class="panel reels" aria-live="polite">
+        <div id="reel1" class="reel">🍒</div>
+        <div id="reel2" class="reel">🍋</div>
+        <div id="reel3" class="reel">⭐</div>
+      </section>
+
+      <section class="panel">
+        <p id="message">Hit spin to play.</p>
+        <button id="resetBtn" class="secondary">Reset Run</button>
+      </section>
+
+      <section class="panel payouts">
+        <h2>Payouts</h2>
+        <ul>
+          <li>3 of a kind: x5</li>
+          <li>2 of a kind: x2</li>
+          <li>No match: lose your bet</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

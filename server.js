@@ -13,6 +13,7 @@ const __dirname  = path.dirname(__filename);
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
 const PORT = process.env.PORT || 4242;
@@ -47,6 +48,8 @@ function removeFromArray(arr, code){
   return { out, removed: arr.length - out.length };
 }
 
+
+app.get('/', (req,res)=> res.sendFile(path.join(__dirname, 'public', 'index.html')));
 app.get('/health', (req,res)=> res.json({ ok:true }));
 app.get('/inventory', (req,res)=> res.json({ verified: verified.length, free: freePool.length }));
 
